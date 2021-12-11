@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.my.board.BoardDAO, com.my.board.BoardVO,java.util.*"%>
+<%@page import="com.my.board.BoardDAO,com.my.board.BoardVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -40,23 +40,29 @@
 
 <table id="list" width="90%">
 <tr>
-	<th>Seq</th>
-	<th>Title</th>
-	<th>Writer</th>
-	<th>Content</th>
-	<th>regDate</th>
+	<th>id</th>
+	<th>residence_type</th>
+	<th>confirmed_date</th>
+	<th>confirmed_status</th>
+	<th>route_date</th>
+	<th>route_name</th>
+	<th>route_arrive_time</th>
+	<th>route_leave_time</th>
 	<th>edit</th>
 	<th>delete</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
-		<td>${u.seq}</td>
-		<td>${u.title}</td>
-		<td>${u.writer}</td>
-		<td>${u.content}</td>
-		<td>${u.regdate}</td>
-		<td><a href="editform/${u.seq}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
+		<td>${u.id}</td>
+		<td>${u.residence_type}</td>
+		<td>${u.confirmed_date}</td>
+		<td>${u.confirmed_status}</td>
+		<td>${u.route_date}</td>
+		<td>${u.route_name}</td>
+		<td>${u.route_arrive_time}</td>
+		<td>${u.route_leave_time}</td>
+		<td><a href="editform/${u.id}">Edit</a></td>
+		<td><a href="javascript:delete_ok('${u.id}')">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>

@@ -17,7 +17,7 @@ BoardDAO boardDAO;
 RequestMethod.GET)
 public String boardlist(Model model) {
 	model.addAttribute("list", boardDAO.getBoardList());
-	return "covidList";
+	return "list";
 }
 
 @RequestMapping(value = "/board/add", method = 
